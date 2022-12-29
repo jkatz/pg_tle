@@ -20,7 +20,9 @@
 #include "miscadmin.h"
 #include "storage/fd.h"
 #include "utils/guc.h"
-
+#if PG_VERSION_NUM < 140000
+#include "utils/memutils.h"
+#endif
 
 /*
  * flex emits a yy_fatal_error() function that it calls in response to
